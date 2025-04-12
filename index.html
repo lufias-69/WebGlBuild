@@ -11,17 +11,20 @@
     <button onclick="goFullScreen()">Go Full Screen</button>
 
     <script>
-        function goFullScreen () {
-            const elem = document.documentElement; // grabs the whole page
+        function goFullScreen() {
+  const elem = document.documentElement;
 
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.webkitRequestFullscreen) { // for Safari
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) { // for old IE
-                elem.msRequestFullscreen();
-            }
-        }
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.webkitRequestFullscreen) {
+    elem.webkitRequestFullscreen(); // for Safari
+  } else if (elem.msRequestFullscreen) {
+    elem.msRequestFullscreen();
+  } else {
+    alert("Fullscreen not supported");
+  }
+}
+
     </script>
 
 </body>
